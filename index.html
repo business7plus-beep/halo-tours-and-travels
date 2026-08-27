@@ -1,21 +1,477 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surat Fast Taxi Service</title>
-</head>
-<body style="font-family: Arial, sans-serif; text-align: center; margin-top: 50px;">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surat Fast Taxi Service & Tours</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f5f7fb;
+  color:#182230
+}
+.halo{
+  width:100%;
+  overflow:hidden;
+}
 
-    <h1 style="color: #FFD700;">🚖 Surat Fast Taxi Service</h1>
-    <h2>City mein sabse safe aur fast taxi!</h2>
-    <p>Airport drop, city tour, aur outstation ke liye aaj hi book karein.</p>
-    
-    <div style="margin: 30px; padding: 20px; background-color: #f4f4f4; border-radius: 10px;">
-        <h3>📞 Booking Ke Liye Call Karein:</h3>
-        <p><strong>+91 - 9909056533</strong></p> 
+/* HEADER */
+.halo-nav{
+  background:#fff;
+  padding:16px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  box-shadow:0 2px 12px #00000018;
+  position:sticky;
+  top:0;
+  z-index:10
+}
+.halo-logo{
+  font-size:24px;
+  font-weight:900;
+  color:#d4af37
+}
+.halo-logo span{color:#073b9c}
+.halo-call{
+  background:#25d366;
+  color:#fff!important;
+  text-decoration:none!important;
+  padding:10px 15px;
+  border-radius:8px;
+  font-weight:bold;
+  font-size:13px
+}
+
+/* HERO */
+.halo-hero{
+  min-height:470px;
+  padding:75px 25px;
+  display:flex;
+  align-items:center;
+  background:
+  linear-gradient(#00265dcc,#00265d99),
+  url("https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1600&q=80");
+  background-size:cover;
+  background-position:center
+}
+.halo-hero-inner{
+  max-width:1100px;
+  width:100%;
+  margin:auto;
+  color:#fff
+}
+.halo-small{
+  color:#ffd044;
+  font-weight:bold;
+  letter-spacing:2px;
+  font-size:13px
+}
+.halo-hero h1{
+  font-size:42px;
+  line-height:1.2;
+  max-width:700px;
+  margin:15px 0
+}
+.halo-hero h1 span{color:#ffc107}
+.halo-hero p{
+  max-width:600px;
+  font-size:16px;
+  line-height:1.7;
+  color:#e2e8f0
+}
+.halo-buttons{
+  margin-top:25px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap
+}
+.halo-btn{
+  padding:13px 20px;
+  border-radius:8px;
+  text-decoration:none!important;
+  font-weight:bold;
+  display:inline-block
+}
+.yellow{
+  background:#ffb703;
+  color:#111!important
+}
+.outline{
+  border:1px solid #fff;
+  color:#fff!important
+}
+
+/* QUICK */
+.halo-quick{
+  max-width:1050px;
+  margin:-40px auto 0;
+  position:relative;
+  padding:0 18px;
+  z-index:5;
+}
+.halo-quick-box{
+  background:#fff;
+  border-radius:15px;
+  padding:22px;
+  box-shadow:0 12px 35px #00000020
+}
+.halo-quick-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:12px
+}
+.halo-field{
+  border:1px solid #ddd;
+  border-radius:8px;
+  padding:13px
+}
+.halo-field small{
+  display:block;
+  color:#667085;
+  font-size:11px;
+  margin-bottom:4px
+}
+.halo-field strong{font-size:14px}
+
+/* SECTION */
+.halo-section{
+  max-width:1100px;
+  margin:70px auto;
+  padding:0 20px
+}
+.halo-heading{
+  text-align:center;
+  margin-bottom:35px
+}
+.halo-heading small{
+  color:#1769d1;
+  font-weight:bold;
+  letter-spacing:1px
+}
+.halo-heading h2{
+  font-size:32px;
+  margin:8px 0
+}
+.halo-heading p{color:#667085}
+
+/* CARDS */
+.halo-cards{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px
+}
+.halo-card{
+  background:#fff;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 5px 20px #0000000d;
+  border:1px solid #e7eaf0
+}
+.halo-img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
+  background:#ddd
+}
+.halo-card-body{padding:20px}
+.halo-card h3{
+  margin:0 0 12px;
+  font-size:22px
+}
+.halo-hi,.halo-en{
+  font-size:14px;
+  line-height:1.7;
+  margin:8px 0
+}
+.halo-en{color:#667085}
+.halo-card-btn{
+  display:block;
+  text-align:center;
+  margin-top:16px;
+  background:#25d366;
+  color:#fff!important;
+  padding:12px;
+  border-radius:7px;
+  text-decoration:none!important;
+  font-weight:bold
+}
+
+/* WHY */
+.halo-why{
+  background:#073b9c;
+  color:#fff;
+  padding:65px 20px
+}
+.halo-why-inner{
+  max-width:1050px;
+  margin:auto
+}
+.halo-why-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px
+}
+.halo-why-card{
+  background:#ffffff14;
+  border:1px solid #ffffff1f;
+  border-radius:12px;
+  padding:25px
+}
+.halo-why-card b{
+  display:block;
+  font-size:18px;
+  margin-bottom:8px
+}
+.halo-why-card p{
+  color:#dce6fa;
+  font-size:13px;
+  line-height:1.7
+}
+
+/* CONTACT */
+.halo-contact{
+  max-width:1050px;
+  margin:65px auto;
+  padding:0 20px
+}
+.halo-contact-box{
+  background:linear-gradient(110deg,#073b9c,#1769d1);
+  border-radius:15px;
+  padding:35px;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px
+}
+.halo-contact-box h2{margin:0 0 8px}
+.halo-contact-box p{
+  margin:0;
+  color:#dce6fa
+}
+.halo-wa{
+  background:#25d366;
+  color:#fff!important;
+  text-decoration:none!important;
+  padding:14px 20px;
+  border-radius:8px;
+  font-weight:bold;
+  white-space:nowrap
+}
+
+/* FOOTER */
+.halo-footer{
+  background:#081326;
+  color:#aab5c5;
+  text-align:center;
+  padding:30px 20px
+}
+.halo-footer b{color:#fff}
+
+/* MOBILE */
+@media(max-width:700px){
+  .halo-nav{padding:13px}
+  .halo-logo{font-size:20px}
+  .halo-hero{min-height:450px;padding:45px 15px}
+  .halo-hero h1{font-size:32px}
+  .halo-quick-grid{grid-template-columns:1fr}
+  .halo-cards{grid-template-columns:1fr}
+  .halo-why-grid{grid-template-columns:1fr}
+  .halo-contact-box{display:block}
+  .halo-wa{display:inline-block;margin-top:15px}
+}
+</style>
+</head>
+<body>
+
+<div class="halo">
+
+  <!-- HEADER -->
+  <div class="halo-nav">
+    <div class="halo-logo">
+      Surat <span>Fast Taxi</span>
     </div>
+    <a class="halo-call" href="tel:+919909056533">
+      📞 Call: 9909056533
+    </a>
+  </div>
+
+  <!-- HERO -->
+  <section class="halo-hero" id="home">
+    <div class="halo-hero-inner">
+      <div class="halo-small">
+        SURAT'S NO. 1 RELIABLE CAB SERVICE
+      </div>
+      <h1>
+        Surat Mein <span>Safe & Comfortable</span> Taxi Booking
+      </h1>
+      <p>
+        Airport drop, Railway Station transfer, Local city tour aur Gujarat ke kisi bhi tourist place (Dwarka, Somnath, Statue of Unity) ke liye affordable cabs book karein.
+      </p>
+      <div class="halo-buttons">
+        <a class="halo-btn yellow" href="https://wa.me/919909056533?text=Hello%20Surat%20Fast%20Taxi,%20mujhe%20cab%20booking%20karni%20hai." target="_blank">
+          🚖 Book Cab on WhatsApp
+        </a>
+        <a class="halo-btn outline" href="#services">
+          Our Services ↓
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK INFO -->
+  <div class="halo-quick">
+    <div class="halo-quick-box">
+      <div class="halo-quick-grid">
+        <div class="halo-field">
+          <small>PICKUP POINT</small>
+          <strong>Surat (Anywhere)</strong>
+        </div>
+        <div class="halo-field">
+          <small>SERVICE TYPE</small>
+          <strong>Local & Outstation</strong>
+        </div>
+        <div class="halo-field">
+          <small>AVAILABILITY</small>
+          <strong>24/7 Open (Call/WhatsApp)</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES / TOURS -->
+  <section class="halo-section" id="services">
+    <div class="halo-heading">
+      <small>OUR SERVICES & TOURS</small>
+      <h2>Humari Taxi Services</h2>
+      <p>Best rates par sabhi tarah ki cab booking available hai</p>
+    </div>
+
+    <div class="halo-cards">
+
+      <!-- LOCAL & AIRPORT -->
+      <div class="halo-card">
+        <img class="halo-img" src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80" alt="Surat Local Cab">
+        <div class="halo-card-body">
+          <h3>Surat Local & Airport Transfer</h3>
+          <p class="halo-hi">
+            <b>हिंदी:</b> सूरत एयरपोर्ट पिकअप/ड्रॉप, रेलवे स्टेशन, या शहर mein kahin bhi aane-jaane ke liye clean aur AC cabs uplabdh hain.
+          </p>
+          <p class="halo-en">
+            <b>English:</b> Clean & comfortable AC cabs for Surat Airport drop, Railway Station pick-up, and local city travel.
+          </p>
+          <a class="halo-card-btn" href="https://wa.me/919909056533?text=Hello,%20mujhe%20Surat%20local%20ya%20airport%20drop%20ke%20liye%20taxi%20chahiye." target="_blank">
+            💬 Book Local Cab
+          </a>
+        </div>
+      </div>
+
+      <!-- DWARKA SOMNATH -->
+      <div class="halo-card">
+        <img class="halo-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Dwarkadhish_Temple.jpg/800px-Dwarkadhish_Temple.jpg" alt="Dwarka Somnath Tour">
+        <div class="halo-card-body">
+          <h3>Dwarka & Somnath Yatra</h3>
+          <p class="halo-hi">
+            <b>हिंदी:</b> Surat se Dwarka, Somnath aur Saurashtra ke sabhi darshan ke liye special long-route tour packages.
+          </p>
+          <p class="halo-en">
+            <b>English:</b> Special long-distance tour packages from Surat to Dwarka, Somnath and religious places.
+          </p>
+          <a class="halo-card-btn" href="https://wa.me/919909056533?text=Hello,%20mujhe%20Dwarka%20Somnath%20tour%20ke%20liye%20cab%20booking%20karni%20hai." target="_blank">
+            💬 Book Dwarka-Somnath Cab
+          </a>
+        </div>
+      </div>
+
+      <!-- STATUE OF UNITY -->
+      <div class="halo-card">
+        <img class="halo-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Statue_of_Unity.jpg/800px-Statue_of_Unity.jpg" alt="Statue of Unity">
+        <div class="halo-card-body">
+          <h3>Statue of Unity (Kevadia)</h3>
+          <p class="halo-hi">
+            <b>हिंदी:</b> Surat se Statue of Unity (Ekta Nagar) one-day return trip ke liye best rates par cab booking.
+          </p>
+          <p class="halo-en">
+            <b>English:</b> Affordable one-day round trip cab booking from Surat to Statue of Unity (Kevadia).
+          </p>
+          <a class="halo-card-btn" href="https://wa.me/919909056533?text=Hello,%20mujhe%20Statue%20of%20Unity%20ke%20liye%20taxi%20chahiye." target="_blank">
+            💬 Book Statue of Unity Cab
+          </a>
+        </div>
+      </div>
+
+      <!-- OUTSTATION -->
+      <div class="halo-card">
+        <img class="halo-img" src="https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=800&q=80" alt="Outstation Cab">
+        <div class="halo-card-body">
+          <h3>Outstation Gujarat Tours</h3>
+          <p class="halo-hi">
+            <b>हिंदी:</b> Gujarat ya dusre states ke kisi bhi shehar mein jaane ke liye reliable outstation taxi service.
+          </p>
+          <p class="halo-en">
+            <b>English:</b> Safe and reliable outstation taxi service from Surat to anywhere across Gujarat and nearby states.
+          </p>
+          <a class="halo-card-btn" href="https://wa.me/919909056533?text=Hello,%20mujhe%20outstation%20trip%20ke%20liye%20taxi%20chahiye." target="_blank">
+            💬 Book Outstation Cab
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="halo-why" id="why">
+    <div class="halo-why-inner">
+      <div class="halo-heading">
+        <small style="color:#ffd044">WHY CHOOSE US?</small>
+        <h2 style="color:#fff">Aapki Safar, Hamari Zimmedari</h2>
+        <p style="color:#dce6fa">Safe, comfortable aur time par service</p>
+      </div>
+
+      <div class="halo-why-grid">
+        <div class="halo-why-card">
+          <b>🚕 Well Cleaned Cabs</b>
+          <p>Har trip se pehle car ki proper cleaning aur check-up hota hai.</p>
+        </div>
+        <div class="halo-why-card">
+          <b>👨‍✈️ Experienced Drivers</b>
+          <p>Rasto ki poori jankari rakhne wale polite aur safe drivers.</p>
+        </div>
+        <div class="halo-why-card">
+          <b>💰 Best Affordable Rates</b>
+          <p>Market mein sabse badiya aur transparent kiraya bina kisi hidden charge ke.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="halo-contact">
+    <div class="halo-contact-box">
+      <div>
+        <h2>Abhi Taxi Book Karein!</h2>
+        <p>Apna pickup aur drop location WhatsApp par bhejein aur turant quotation paayein.</p>
+      </div>
+      <a class="halo-wa" href="https://wa.me/919909056533?text=Hello%20Surat%20Fast%20Taxi,%20mujhe%20trip%20ke%20liye%20cab%20chahiye." target="_blank">
+        💬 WhatsApp Chat Now
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="halo-footer">
+    <b>Surat Fast Taxi Service & Tours</b>
+    <p>📞 Phone/WhatsApp: <a href="tel:+919909056533" style="color:#fff">9909056533</a></p>
+    <p>© 2026 Surat Fast Taxi. All Rights Reserved.</p>
+  </footer>
+
+</div>
 
 </body>
 </html>
-
