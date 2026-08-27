@@ -9,23 +9,24 @@
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:#f5f7fb;
-  color:#182230
+  font-family:'Segoe UI',Arial,Helvetica,sans-serif;
+  background:linear-gradient(135deg, #e0f7fa 0%, #fff3e0 50%, #e8f5e9 100%);
+  color:#1a237e
 }
+
 .halo{
   width:100%;
   overflow:hidden;
 }
 
-/* HEADER */
+/* HEADER - Ocean Blue */
 .halo-nav{
-  background:#fff;
+  background:linear-gradient(90deg, #006064 0%, #00838f 100%);
   padding:16px 20px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  box-shadow:0 2px 12px #00000018;
+  box-shadow:0 4px 15px rgba(0,131,143,0.3);
   position:sticky;
   top:0;
   z-index:10
@@ -33,111 +34,167 @@ body{
 .halo-logo{
   font-size:24px;
   font-weight:900;
-  color:#d4af37
+  color:#ffd54f;
+  text-shadow:1px 1px 3px rgba(0,0,0,0.3)
 }
-.halo-logo span{color:#073b9c}
+.halo-logo span{color:#fff}
 .halo-call{
-  background:#25d366;
+  background:linear-gradient(135deg, #00e676 0%, #00c853 100%);
   color:#fff!important;
   text-decoration:none!important;
   padding:10px 15px;
-  border-radius:8px;
+  border-radius:25px;
   font-weight:bold;
-  font-size:13px
+  font-size:13px;
+  box-shadow:0 3px 10px rgba(0,200,83,0.4);
+  animation:pulse 2s infinite
 }
 
-/* HERO */
+@keyframes pulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.05)}
+}
+
+/* HERO - Tropical Beach Vibe */
 .halo-hero{
-  min-height:470px;
+  min-height:520px;
   padding:75px 25px;
   display:flex;
   align-items:center;
   background:
-  linear-gradient(#00265dcc,#00265d99),
-  url("https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1600&q=80");
+  linear-gradient(135deg, rgba(0,105,92,0.9) 0%, rgba(0,151,167,0.85) 50%, rgba(255,145,0,0.7) 100%),
+  url("https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1600&q=80");
   background-size:cover;
-  background-position:center
+  background-position:center;
+  position:relative;
+  overflow:hidden
 }
+
+.halo-hero::before{
+  content:'🌴🌊☀️';
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:50px;
+  animation:float 3s ease-in-out infinite
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-15px)}
+}
+
 .halo-hero-inner{
   max-width:1100px;
   width:100%;
   margin:auto;
-  color:#fff
+  color:#fff;
+  position:relative;
+  z-index:2
 }
 .halo-small{
-  color:#ffd044;
+  color:#ffd740;
   font-weight:bold;
   letter-spacing:2px;
-  font-size:13px
+  font-size:14px;
+  text-shadow:1px 1px 2px rgba(0,0,0,0.3)
 }
 .halo-hero h1{
-  font-size:42px;
+  font-size:48px;
   line-height:1.2;
-  max-width:700px;
-  margin:15px 0
+  max-width:750px;
+  margin:15px 0;
+  text-shadow:2px 2px 4px rgba(0,0,0,0.3)
 }
-.halo-hero h1 span{color:#ffc107}
+.halo-hero h1 span{
+  background:linear-gradient(120deg, #ffd740 0%, #ff6f00 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  text-shadow:none
+}
 .halo-hero p{
   max-width:600px;
-  font-size:16px;
-  line-height:1.7;
-  color:#e2e8f0
+  font-size:17px;
+  line-height:1.8;
+  color:#e0f7fa;
+  text-shadow:1px 1px 2px rgba(0,0,0,0.2)
 }
 .halo-buttons{
-  margin-top:25px;
+  margin-top:30px;
   display:flex;
-  gap:12px;
+  gap:15px;
   flex-wrap:wrap
 }
 .halo-btn{
-  padding:13px 20px;
-  border-radius:8px;
+  padding:15px 25px;
+  border-radius:30px;
   text-decoration:none!important;
   font-weight:bold;
-  display:inline-block
+  display:inline-block;
+  transition:all 0.3s;
+  box-shadow:0 5px 15px rgba(0,0,0,0.3)
 }
 .yellow{
-  background:#ffb703;
-  color:#111!important
+  background:linear-gradient(135deg, #ff9800 0%, #ff6f00 100%);
+  color:#fff!important;
+  animation:glow 2s infinite
+}
+@keyframes glow{
+  0%,100%{box-shadow:0 5px 15px rgba(255,111,0,0.4)}
+  50%{box-shadow:0 5px 25px rgba(255,111,0,0.7)}
 }
 .outline{
-  border:1px solid #fff;
-  color:#fff!important
+  border:2px solid #4dd0e1;
+  color:#e0f7fa!important;
+  background:rgba(0,0,0,0.2)
+}
+.halo-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.4)
 }
 
-/* QUICK */
+/* QUICK - Fresh Green Accent */
 .halo-quick{
   max-width:1050px;
   margin:-40px auto 0;
   position:relative;
   padding:0 18px;
-  z-index:5;
+  z-index:5
 }
 .halo-quick-box{
-  background:#fff;
-  border-radius:15px;
-  padding:22px;
-  box-shadow:0 12px 35px #00000020
+  background:linear-gradient(135deg, #ffffff 0%, #f1f8e9 100%);
+  border-radius:20px;
+  padding:25px;
+  box-shadow:0 15px 35px rgba(0,105,92,0.2);
+  border:2px solid #a5d6a7
 }
 .halo-quick-grid{
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
-  gap:12px
+  gap:15px
 }
 .halo-field{
-  border:1px solid #ddd;
-  border-radius:8px;
-  padding:13px
+  background:linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border:1px solid #81c784;
+  border-radius:12px;
+  padding:15px;
+  transition:all 0.3s
+}
+.halo-field:hover{
+  transform:scale(1.05);
+  box-shadow:0 5px 15px rgba(76,175,80,0.3)
 }
 .halo-field small{
   display:block;
-  color:#667085;
+  color:#2e7d32;
   font-size:11px;
-  margin-bottom:4px
+  margin-bottom:5px;
+  font-weight:bold
 }
-.halo-field strong{font-size:14px}
+.halo-field strong{font-size:15px;color:#1b5e20}
 
-/* SECTION */
+/* SECTION - Sky Blue */
 .halo-section{
   max-width:1100px;
   margin:70px auto;
@@ -145,156 +202,293 @@ body{
 }
 .halo-heading{
   text-align:center;
-  margin-bottom:35px
+  margin-bottom:40px
 }
 .halo-heading small{
-  color:#1769d1;
+  color:#00838f;
   font-weight:bold;
-  letter-spacing:1px
+  letter-spacing:2px;
+  font-size:14px;
+  background:linear-gradient(135deg, #b2ebf2 0%, #80deea 100%);
+  padding:5px 15px;
+  border-radius:20px
 }
 .halo-heading h2{
-  font-size:32px;
-  margin:8px 0
+  font-size:38px;
+  margin:15px 0;
+  background:linear-gradient(120deg, #006064 0%, #00838f 50%, #ff6f00 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text
 }
-.halo-heading p{color:#667085}
+.halo-heading p{color:#546e7a;font-size:16px}
 
-/* CARDS */
+/* CARDS - Vibrant Colors */
 .halo-cards{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:25px
+  gap:30px
 }
 .halo-card{
-  background:#fff;
-  border-radius:15px;
+  background:linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
+  border-radius:20px;
   overflow:hidden;
-  box-shadow:0 5px 20px #0000000d;
-  border:1px solid #e7eaf0
+  box-shadow:0 8px 25px rgba(0,131,143,0.15);
+  border:2px solid transparent;
+  transition:all 0.4s;
+  position:relative
+}
+.halo-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 15px 35px rgba(0,131,143,0.3);
+  border-color:#4dd0e1
+}
+.halo-card:nth-child(1){
+  border-top:5px solid #00838f
+}
+.halo-card:nth-child(2){
+  border-top:5px solid #ff6f00
+}
+.halo-card:nth-child(3){
+  border-top:5px solid #4caf50
+}
+.halo-card:nth-child(4){
+  border-top:5px solid #7c4dff
 }
 .halo-img{
   width:100%;
-  height:220px;
+  height:240px;
   object-fit:cover;
   display:block;
-  background:#ddd
+  background:linear-gradient(135deg, #b2ebf2 0%, #80deea 100%);
+  transition:all 0.5s
 }
-.halo-card-body{padding:20px}
+.halo-card:hover .halo-img{
+  transform:scale(1.05)
+}
+.halo-card-body{
+  padding:25px;
+  background:rgba(255,255,255,0.95)
+}
 .halo-card h3{
-  margin:0 0 12px;
-  font-size:22px
+  margin:0 0 15px;
+  font-size:24px;
+  color:#006064;
+  position:relative;
+  padding-bottom:10px
+}
+.halo-card h3::after{
+  content:'';
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:50px;
+  height:3px;
+  background:linear-gradient(90deg, #ff6f00 0%, #ffd740 100%);
+  border-radius:2px
 }
 .halo-hi,.halo-en{
-  font-size:14px;
-  line-height:1.7;
-  margin:8px 0
+  font-size:15px;
+  line-height:1.8;
+  margin:12px 0;
+  padding:12px;
+  border-radius:10px
 }
-.halo-en{color:#667085}
+.halo-hi{
+  background:linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  border-left:4px solid #ff9800
+}
+.halo-en{
+  color:#37474f;
+  background:linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+  border-left:4px solid #00838f
+}
 .halo-card-btn{
   display:block;
   text-align:center;
-  margin-top:16px;
-  background:#25d366;
+  margin-top:20px;
+  background:linear-gradient(135deg, #00c853 0%, #00e676 100%);
   color:#fff!important;
-  padding:12px;
-  border-radius:7px;
+  padding:14px;
+  border-radius:25px;
   text-decoration:none!important;
-  font-weight:bold
+  font-weight:bold;
+  font-size:15px;
+  transition:all 0.3s;
+  box-shadow:0 5px 15px rgba(0,200,83,0.3)
+}
+.halo-card-btn:hover{
+  transform:scale(1.03);
+  box-shadow:0 8px 20px rgba(0,200,83,0.5)
 }
 
-/* WHY */
+/* WHY - Sunset Orange Theme */
 .halo-why{
-  background:#073b9c;
+  background:linear-gradient(135deg, #ff6f00 0%, #ff8f00 25%, #ffa726 50%, #ffb74d 75%, #ffe0b2 100%);
   color:#fff;
-  padding:65px 20px
+  padding:70px 20px;
+  position:relative;
+  overflow:hidden
+}
+.halo-why::before{
+  content:'🏖️🗺️✈️';
+  position:absolute;
+  top:30px;
+  left:30px;
+  font-size:60px;
+  opacity:0.3;
+  animation:float 4s ease-in-out infinite
 }
 .halo-why-inner{
   max-width:1050px;
-  margin:auto
+  margin:auto;
+  position:relative;
+  z-index:2
 }
 .halo-why-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:18px
+  gap:20px
 }
 .halo-why-card{
-  background:#ffffff14;
-  border:1px solid #ffffff1f;
-  border-radius:12px;
-  padding:25px
+  background:rgba(255,255,255,0.2);
+  border:2px solid rgba(255,255,255,0.4);
+  border-radius:15px;
+  padding:30px;
+  backdrop-filter:blur(5px);
+  transition:all 0.3s
+}
+.halo-why-card:hover{
+  background:rgba(255,255,255,0.3);
+  transform:scale(1.05)
 }
 .halo-why-card b{
   display:block;
-  font-size:18px;
-  margin-bottom:8px
+  font-size:20px;
+  margin-bottom:10px;
+  color:#fff;
+  text-shadow:1px 1px 3px rgba(0,0,0,0.3)
 }
 .halo-why-card p{
-  color:#dce6fa;
-  font-size:13px;
-  line-height:1.7
+  color:#fff;
+  font-size:14px;
+  line-height:1.8;
+  text-shadow:1px 1px 2px rgba(0,0,0,0.2)
 }
 
-/* CONTACT */
+/* CONTACT - Ocean Deep */
 .halo-contact{
   max-width:1050px;
   margin:65px auto;
   padding:0 20px
 }
 .halo-contact-box{
-  background:linear-gradient(110deg,#073b9c,#1769d1);
-  border-radius:15px;
-  padding:35px;
+  background:linear-gradient(135deg, #004d40 0%, #00695c 25%, #00838f 50%, #0097a7 75%, #00acc1 100%);
+  border-radius:25px;
+  padding:40px;
   color:#fff;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px
+  gap:25px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 15px 35px rgba(0,77,64,0.4)
 }
-.halo-contact-box h2{margin:0 0 8px}
+.halo-contact-box::before{
+  content:'🌅';
+  position:absolute;
+  top:-20px;
+  right:-20px;
+  font-size:100px;
+  opacity:0.2
+}
+.halo-contact-box h2{
+  margin:0 0 10px;
+  font-size:30px;
+  color:#ffd740
+}
 .halo-contact-box p{
   margin:0;
-  color:#dce6fa
+  color:#b2ebf2;
+  font-size:16px;
+  line-height:1.6
 }
 .halo-wa{
-  background:#25d366;
+  background:linear-gradient(135deg, #00e676 0%, #00c853 100%);
   color:#fff!important;
   text-decoration:none!important;
-  padding:14px 20px;
-  border-radius:8px;
+  padding:16px 25px;
+  border-radius:30px;
   font-weight:bold;
-  white-space:nowrap
+  font-size:16px;
+  white-space:nowrap;
+  animation:glow 2s infinite;
+  box-shadow:0 5px 20px rgba(0,200,83,0.5);
+  transition:all 0.3s
+}
+.halo-wa:hover{
+  transform:scale(1.05)
 }
 
-/* FOOTER */
+/* FOOTER - Deep Blue */
 .halo-footer{
-  background:#081326;
-  color:#aab5c5;
+  background:linear-gradient(135deg, #1a237e 0%, #0d47a1 50%, #004d40 100%);
+  color:#b3e5fc;
   text-align:center;
-  padding:30px 20px
+  padding:35px 20px;
+  border-top:5px solid #ffd740
 }
-.halo-footer b{color:#fff}
+.halo-footer b{
+  color:#ffd740;
+  font-size:20px
+}
+.halo-footer a{
+  color:#4dd0e1!important;
+  text-decoration:none
+}
+
+/* Decorative travel emojis */
+.travel-emoji{
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  font-size:30px;
+  animation:float 3s ease-in-out infinite;
+  z-index:100;
+  background:rgba(255,255,255,0.8);
+  border-radius:50%;
+  padding:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.3)
+}
 
 /* MOBILE */
 @media(max-width:700px){
-  .halo-nav{padding:13px}
+  .halo-nav{padding:13px;flex-direction:column;gap:10px}
   .halo-logo{font-size:20px}
-  .halo-hero{min-height:450px;padding:45px 15px}
+  .halo-hero{min-height:500px;padding:50px 15px}
   .halo-hero h1{font-size:32px}
+  .halo-hero::before{font-size:30px;top:10px;right:10px}
   .halo-quick-grid{grid-template-columns:1fr}
   .halo-cards{grid-template-columns:1fr}
   .halo-why-grid{grid-template-columns:1fr}
-  .halo-contact-box{display:block}
-  .halo-wa{display:inline-block;margin-top:15px}
+  .halo-contact-box{display:block;text-align:center}
+  .halo-wa{display:inline-block;margin-top:20px}
+  .halo-heading h2{font-size:28px}
 }
 </style>
 </head>
 <body>
+
+<!-- Floating travel emoji -->
+<div class="travel-emoji">🌍</div>
 
 <div class="halo">
 
   <!-- HEADER -->
   <div class="halo-nav">
     <div class="halo-logo">
-      Surat <span>Fast Taxi</span>
+      ✈️ Surat <span>Fast Taxi</span>
     </div>
     <a class="halo-call" href="tel:+919909056533">
       📞 Call: 9909056533
@@ -305,20 +499,20 @@ body{
   <section class="halo-hero" id="home">
     <div class="halo-hero-inner">
       <div class="halo-small">
-        SURAT'S NO. 1 RELIABLE CAB SERVICE
+        🏝️ SURAT'S NO. 1 RELIABLE CAB SERVICE
       </div>
       <h1>
-        Surat Mein <span>Safe & Comfortable</span> Taxi Booking
+        <span>Explore Gujarat</span> With Comfort & Safety
       </h1>
       <p>
-        Airport drop, Railway Station transfer, Local city tour aur Gujarat ke kisi bhi tourist place (Dwarka, Somnath, Statue of Unity) ke liye affordable cabs book karein.
+        🌊 Airport drop, Railway Station transfer, Local city tour aur Gujarat ke kisi bhi beautiful tourist place (Dwarka, Somnath, Statue of Unity) ke liye affordable cabs book karein.
       </p>
       <div class="halo-buttons">
         <a class="halo-btn yellow" href="https://wa.me/919909056533?text=Hello%20Surat%20Fast%20Taxi,%20mujhe%20cab%20booking%20karni%20hai." target="_blank">
           🚖 Book Cab on WhatsApp
         </a>
         <a class="halo-btn outline" href="#services">
-          Our Services ↓
+          🌟 Our Services ↓
         </a>
       </div>
     </div>
@@ -329,15 +523,15 @@ body{
     <div class="halo-quick-box">
       <div class="halo-quick-grid">
         <div class="halo-field">
-          <small>PICKUP POINT</small>
+          <small>📍 PICKUP POINT</small>
           <strong>Surat (Anywhere)</strong>
         </div>
         <div class="halo-field">
-          <small>SERVICE TYPE</small>
+          <small>🚗 SERVICE TYPE</small>
           <strong>Local & Outstation</strong>
         </div>
         <div class="halo-field">
-          <small>AVAILABILITY</small>
+          <small>⏰ AVAILABILITY</small>
           <strong>24/7 Open (Call/WhatsApp)</strong>
         </div>
       </div>
@@ -347,18 +541,18 @@ body{
   <!-- SERVICES / TOURS -->
   <section class="halo-section" id="services">
     <div class="halo-heading">
-      <small>OUR SERVICES & TOURS</small>
-      <h2>Humari Taxi Services</h2>
-      <p>Best rates par sabhi tarah ki cab booking available hai</p>
+      <small>🏖️ OUR SERVICES & TOURS</small>
+      <h2>Explore Beautiful Destinations</h2>
+      <p>Best rates par sabhi tarah ki cab booking available hai - Aaj hi book karein!</p>
     </div>
 
     <div class="halo-cards">
 
       <!-- LOCAL & AIRPORT -->
       <div class="halo-card">
-        <img class="halo-img" src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80" alt="Surat Local Cab">
+        <img class="halo-img" src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80" alt="Surat Local Cab">
         <div class="halo-card-body">
-          <h3>Surat Local & Airport Transfer</h3>
+          <h3>🏙️ Surat Local & Airport Transfer</h3>
           <p class="halo-hi">
             <b>हिंदी:</b> सूरत एयरपोर्ट पिकअप/ड्रॉप, रेलवे स्टेशन, या शहर mein kahin bhi aane-jaane ke liye clean aur AC cabs uplabdh hain.
           </p>
@@ -373,10 +567,9 @@ body{
 
       <!-- DWARKA SOMNATH -->
       <div class="halo-card">
-        <img class="halo-img" src="https://images.unsplash.com/photo-1621682372775-53994a69daeb?auto=format&fit=crop&w=800&q=80
-" alt="Dwarka Somnath Tour">
+        <img class="halo-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Dwarkadhish_Temple.jpg/800px-Dwarkadhish_Temple.jpg" alt="Dwarka Somnath Tour">
         <div class="halo-card-body">
-          <h3>Dwarka & Somnath Yatra</h3>
+          <h3>🛕 Dwarka & Somnath Yatra</h3>
           <p class="halo-hi">
             <b>हिंदी:</b> Surat se Dwarka, Somnath aur Saurashtra ke sabhi darshan ke liye special long-route tour packages.
           </p>
@@ -393,7 +586,7 @@ body{
       <div class="halo-card">
         <img class="halo-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Statue_of_Unity.jpg/800px-Statue_of_Unity.jpg" alt="Statue of Unity">
         <div class="halo-card-body">
-          <h3>Statue of Unity (Kevadia)</h3>
+          <h3>🗿 Statue of Unity (Kevadia)</h3>
           <p class="halo-hi">
             <b>हिंदी:</b> Surat se Statue of Unity (Ekta Nagar) one-day return trip ke liye best rates par cab booking.
           </p>
@@ -410,7 +603,7 @@ body{
       <div class="halo-card">
         <img class="halo-img" src="https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=800&q=80" alt="Outstation Cab">
         <div class="halo-card-body">
-          <h3>Outstation Gujarat Tours</h3>
+          <h3>🌄 Outstation Gujarat Tours</h3>
           <p class="halo-hi">
             <b>हिंदी:</b> Gujarat ya dusre states ke kisi bhi shehar mein jaane ke liye reliable outstation taxi service.
           </p>
@@ -430,23 +623,23 @@ body{
   <section class="halo-why" id="why">
     <div class="halo-why-inner">
       <div class="halo-heading">
-        <small style="color:#ffd044">WHY CHOOSE US?</small>
-        <h2 style="color:#fff">Aapki Safar, Hamari Zimmedari</h2>
-        <p style="color:#dce6fa">Safe, comfortable aur time par service</p>
+        <small style="color:#fff;background:rgba(255,255,255,0.3)">🌟 WHY CHOOSE US?</small>
+        <h2 style="background:linear-gradient(120deg, #fff 0%, #ffe0b2 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Aapki Safar, Hamari Zimmedari</h2>
+        <p style="color:#fff">Safe, comfortable aur time par service - Har yatra khaas!</p>
       </div>
 
       <div class="halo-why-grid">
         <div class="halo-why-card">
           <b>🚕 Well Cleaned Cabs</b>
-          <p>Har trip se pehle car ki proper cleaning aur check-up hota hai.</p>
+          <p>Har trip se pehle car ki proper cleaning aur check-up hota hai. Aapka comfort hamari priority!</p>
         </div>
         <div class="halo-why-card">
           <b>👨‍✈️ Experienced Drivers</b>
-          <p>Rasto ki poori jankari rakhne wale polite aur safe drivers.</p>
+          <p>Rasto ki poori jankari rakhne wale polite aur safe drivers. Har destination tak safe pahunchayein.</p>
         </div>
         <div class="halo-why-card">
           <b>💰 Best Affordable Rates</b>
-          <p>Market mein sabse badiya aur transparent kiraya bina kisi hidden charge ke.</p>
+          <p>Market mein sabse badiya aur transparent kiraya bina kisi hidden charge ke. Budget mein best service!</p>
         </div>
       </div>
     </div>
@@ -456,8 +649,8 @@ body{
   <section class="halo-contact">
     <div class="halo-contact-box">
       <div>
-        <h2>Abhi Taxi Book Karein!</h2>
-        <p>Apna pickup aur drop location WhatsApp par bhejein aur turant quotation paayein.</p>
+        <h2>🌅 Abhi Taxi Book Karein!</h2>
+        <p>Apna pickup aur drop location WhatsApp par bhejein aur turant quotation paayein. Aaj hi apni yatra shuru karein!</p>
       </div>
       <a class="halo-wa" href="https://wa.me/919909056533?text=Hello%20Surat%20Fast%20Taxi,%20mujhe%20trip%20ke%20liye%20cab%20chahiye." target="_blank">
         💬 WhatsApp Chat Now
@@ -467,12 +660,13 @@ body{
 
   <!-- FOOTER -->
   <footer class="halo-footer">
-    <b>Surat Fast Taxi Service & Tours</b>
-    <p>📞 Phone/WhatsApp: <a href="tel:+919909056533" style="color:#fff">9909056533</a></p>
+    <b>🚗 Surat Fast Taxi Service & Tours</b>
+    <p>📞 Phone/WhatsApp: <a href="tel:+919909056533">9909056533</a></p>
+    <p>🌍 Explore Beautiful Gujarat With Us!</p>
     <p>© 2026 Surat Fast Taxi. All Rights Reserved.</p>
   </footer>
 
 </div>
 
 </body>
-</html>
+    </html>
